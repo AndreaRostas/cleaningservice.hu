@@ -1,52 +1,162 @@
+import { useI18n } from "@/lib/i18n";
+import { Sparkles, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
+
 export default function Impressum() {
+  const { lang } = useI18n();
+
   return (
-    <main className="max-w-3xl mx-auto px-4 py-16 text-sm leading-relaxed">
-      
-      <h1 className="text-2xl font-bold mb-6">Impressum</h1>
+    <>
+      {/* Navbar – gleich wie Hauptseite */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+        <div className="container mx-auto flex items-center justify-between h-16 px-4">
+          <Link to="/" className="flex items-center gap-2">
+            <Sparkles className="h-5 w-5 text-primary" />
+            <div>
+              <span className="font-display font-bold text-primary text-sm tracking-wide">
+                ZB CLEANINGSERVICE
+              </span>
+              <span className="block text-[10px] text-muted-foreground tracking-widest uppercase">
+                {lang === "de" ? "Gebäudereinigung" : "Épülettakarítás"}
+              </span>
+            </div>
+          </Link>
 
-      <section className="space-y-4">
-        <div>
-          <h2 className="font-semibold">Angaben gemäß § 5 TMG</h2>
-          <p>ZB Cleaningservice</p>
-          <p>Inhaberin: Zoltan Rostas</p>
-          <p>5463 Nagyrev , Ujtelep 15</p>
-          <p> Deutschland / Ungarn</p>
+          <Link
+            to="/"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            {lang === "de" ? "Zurück zur Startseite" : "Vissza a főoldalra"}
+          </Link>
+        </div>
+      </nav>
+
+      {/* Hintergrund-Gradient wie Hero */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background to-secondary/30 pointer-events-none" />
+      <Sparkles className="fixed top-1/4 left-[5%] h-5 w-5 text-primary/20 animate-pulse pointer-events-none" />
+      <Sparkles className="fixed bottom-1/3 right-[8%] h-4 w-4 text-primary/15 animate-pulse delay-700 pointer-events-none" />
+
+      <main className="max-w-3xl mx-auto px-4 pt-28 pb-20 text-sm leading-relaxed">
+
+        {/* Header */}
+        <div className="mb-10">
+          <div className="inline-flex items-center gap-2 bg-secondary border border-border rounded-full px-4 py-1.5 mb-6 text-xs text-muted-foreground">
+            <Sparkles className="h-3.5 w-3.5 text-primary" />
+            ZB Cleaningservice
+          </div>
+          <h1 className="font-display text-4xl md:text-5xl font-bold">
+            <span className="text-gradient-gold italic">Impressum</span>
+          </h1>
         </div>
 
-        <div>
-          <h2 className="font-semibold">Kontakt</h2>
-          <p>Telefon: +36 20 538 5008</p>
-          <p>E-Mail: zb.service247@gmail.com</p>
+        <div className="border border-border rounded-2xl overflow-hidden bg-secondary/20">
+
+          <Section title="Angaben gemäß § 5 TMG">
+            <Line label="Unternehmen" value="ZB Cleaningservice" />
+            <Line label="Inhaberin" value="Zoltan Rostas" />
+            <Line label="Anschrift" value="5463 Nagyrev, Ujtelep 15" />
+            <Line label="Land" value="Deutschland / Ungarn" />
+          </Section>
+
+          <Divider />
+
+          <Section title="Kontakt">
+            <Line label="Telefon" value="+36 20 538 5008" />
+            <Line label="Telefon DE" value="+49 176 651 93906" />
+            <Line
+              label="E-Mail"
+              value="zb.service247@gmail.com"
+              href="mailto:zb.service247@gmail.com"
+            />
+          </Section>
+
+          <Divider />
+
+          <Section title="Steuernummer">
+            <Line label="Steuernummer" value="32880014-2-16" />
+            <Line label="VAT ID" value="HU32880014" />
+          </Section>
+
+          <Divider />
+
+          <Section title="Hosting">
+            <Line label="Anbieter" value="Vercel Inc." />
+            <Line label="Adresse" value="440 N Barranca Ave #4133, Covina, CA 91723, USA" />
+            <Line label="Website" value="vercel.com" href="https://vercel.com" />
+          </Section>
+
+          <Divider />
+
+          <Section title="Haftung für Inhalte">
+            <p className="text-muted-foreground">
+              Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
+              nach den allgemeinen Gesetzen verantwortlich.
+            </p>
+          </Section>
+
+          <Divider />
+
+          <Section title="Haftung für Links">
+            <p className="text-muted-foreground">
+              Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
+              Einfluss haben.
+            </p>
+          </Section>
+
         </div>
 
-        <div>
-          <h2 className="font-semibold">Steuernummer</h2>
-          <p>32880014-2-16 / VAT ID : HU32880014.</p>
+        {/* Footer-Link */}
+        <div className="mt-10 flex items-center justify-center gap-6 text-xs text-muted-foreground">
+          <Link to="/datenschutz" className="hover:text-primary transition-colors">
+            Datenschutzerklärung
+          </Link>
+          <span className="text-border">·</span>
+          <Link to="/" className="hover:text-primary transition-colors">
+            Startseite
+          </Link>
         </div>
+      </main>
+    </>
+  );
+}
 
-        <div>
-          <h2 className="font-semibold">Hosting</h2>
-          <p>Vercel Inc.</p>
-          <p>440 N Barranca Ave #4133</p>
-          <p>Covina, CA 91723, USA</p>
-          <p>https://vercel.com</p>
-        </div>
+/* ── Hilfskomponenten ── */
 
-        <div>
-          <h2 className="font-semibold">Haftung für Inhalte</h2>
-          <p>
-            Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
-          </p>
-        </div>
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="px-6 py-5">
+      <h2 className="font-display font-semibold text-primary text-xs tracking-widest uppercase mb-3">
+        {title}
+      </h2>
+      <div className="space-y-1.5">{children}</div>
+    </div>
+  );
+}
 
-        <div>
-          <h2 className="font-semibold">Haftung für Links</h2>
-          <p>
-            Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.
-          </p>
-        </div>
+function Divider() {
+  return <div className="border-t border-border mx-6" />;
+}
 
-      </section>
-    </main>
+function Line({
+  label,
+  value,
+  href,
+}: {
+  label: string;
+  value: string;
+  href?: string;
+}) {
+  return (
+    <div className="flex flex-wrap gap-x-3">
+      <span className="text-muted-foreground min-w-[100px]">{label}:</span>
+      {href ? (
+        <a href={href} className="text-primary hover:underline">
+          {value}
+        </a>
+      ) : (
+        <span className="text-foreground">{value}</span>
+      )}
+    </div>
   );
 }
