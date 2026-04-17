@@ -3,11 +3,11 @@ import { Sparkles, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Datenschutz() {
-  const { lang } = useI18n();
+  const {lang, t } = useI18n();
 
   return (
     <>
-      {/* Navbar – gleich wie Hauptseite */}
+      {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto flex items-center justify-between h-16 px-4">
           <Link to="/" className="flex items-center gap-2">
@@ -17,7 +17,7 @@ export default function Datenschutz() {
                 ZB CLEANINGSERVICE
               </span>
               <span className="block text-[10px] text-muted-foreground tracking-widest uppercase">
-                {lang === "de" ? "Gebäudereinigung" : "Épülettakarítás"}
+                Gebäudereinigung
               </span>
             </div>
           </Link>
@@ -27,12 +27,12 @@ export default function Datenschutz() {
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
-            {lang === "de" ? "Zurück zur Startseite" : "Vissza a főoldalra"}
+            {t.datenschutz.back}
           </Link>
         </div>
       </nav>
 
-      {/* Hintergrund-Gradient wie Hero */}
+      {/* Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background to-secondary/30 pointer-events-none" />
       <Sparkles className="fixed top-1/4 right-[5%] h-5 w-5 text-primary/20 animate-pulse pointer-events-none" />
       <Sparkles className="fixed bottom-1/4 left-[8%] h-4 w-4 text-primary/15 animate-pulse delay-700 pointer-events-none" />
@@ -46,63 +46,69 @@ export default function Datenschutz() {
             ZB Cleaningservice
           </div>
           <h1 className="font-display text-4xl md:text-5xl font-bold">
-            <span className="text-gradient-gold italic">Datenschutz</span>
-            <span className="text-foreground"> erklärung</span>
+            <span className="text-gradient-gold italic">{t.datenschutz.title}</span>
           </h1>
         </div>
 
         <div className="space-y-3">
 
-          <DsSection number="1" title="Allgemeine Hinweise">
-            Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Website verarbeitet Daten
-            ausschließlich im Rahmen der gesetzlichen Datenschutzvorschriften (DSGVO, TMG).
+          <DsSection number="1" title={t.datenschutz.sections[0]}>
+            {lang === "de"
+              ? "Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Website verarbeitet Daten ausschließlich im Rahmen der gesetzlichen Datenschutzvorschriften (DSGVO, TMG)."
+              : "Személyes adatainak védelme fontos számunkra. Ez a weboldal az adatokat kizárólag a jogszabályoknak megfelelően kezeli."}
           </DsSection>
 
-          <DsSection number="2" title="Verantwortliche Stelle">
+          <DsSection number="2" title={t.datenschutz.sections[1]}>
             <div className="space-y-0.5">
               <p className="text-foreground font-medium">ZB Cleaningservice</p>
-              <p>Inhaberin: Zoltan Rostas</p>
+              <p>
+                {lang === "de" ? "Inhaberin" : "Tulajdonos"}: Zoltan Rostas
+              </p>
               <a href="mailto:zb.service247@gmail.com" className="text-primary hover:underline">
                 zb.service247@gmail.com
               </a>
             </div>
           </DsSection>
 
-          <DsSection number="3" title="Hosting">
-            Diese Website wird bei Vercel Inc. gehostet. Beim Besuch der Website werden automatisch
-            Server-Logfiles (IP-Adresse, Browser, Zeitpunkt des Zugriffs) erfasst.
+          <DsSection number="3" title={t.datenschutz.sections[2]}>
+            {lang === "de"
+              ? "Diese Website wird bei Vercel Inc. gehostet. Beim Besuch der Website werden automatisch Server-Logfiles erfasst."
+              : "Ez a weboldal a Vercel Inc. szerverein fut. A látogatás során szervernaplók kerülnek rögzítésre."}
           </DsSection>
 
-          <DsSection number="4" title="Shopify / Shop-System">
-            Wenn ein Online-Shop integriert ist, werden zur Abwicklung von Bestellungen
-            personenbezogene Daten (Name, Adresse, Zahlungsdaten) an Shopify übermittelt und dort
-            verarbeitet.
+          <DsSection number="4" title={t.datenschutz.sections[3]}>
+            {lang === "de"
+              ? "Wenn ein Online-Shop integriert ist, werden personenbezogene Daten an Shopify übermittelt."
+              : "Ha webáruház van integrálva, az adatok a Shopify rendszerébe kerülnek."}
           </DsSection>
 
-          <DsSection number="5" title="Kontaktformular / E-Mail">
-            Wenn Sie uns per E-Mail oder Kontaktformular kontaktieren, werden Ihre Angaben zur
-            Bearbeitung der Anfrage gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung
-            weiter.
+          <DsSection number="5" title={t.datenschutz.sections[4]}>
+            {lang === "de"
+              ? "Wenn Sie uns kontaktieren, werden Ihre Angaben zur Bearbeitung gespeichert."
+              : "Kapcsolatfelvétel esetén az adatokat az ügyintézéshez tároljuk."}
           </DsSection>
 
-          <DsSection number="6" title="Cookies">
-            Diese Website kann Cookies verwenden, um Funktionen zu ermöglichen (z. B. Warenkorb,
-            Analytics). Beim ersten Besuch wird ein Cookie-Banner zur Einwilligung angezeigt.
+          <DsSection number="6" title={t.datenschutz.sections[5]}>
+            {lang === "de"
+              ? "Diese Website kann Cookies verwenden."
+              : "Ez a weboldal sütiket használhat."}
           </DsSection>
 
-          <DsSection number="7" title="Ihre Rechte">
-            Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung
-            der Verarbeitung Ihrer personenbezogenen Daten gemäß DSGVO.
+          <DsSection number="7" title={t.datenschutz.sections[6]}>
+            {lang === "de"
+              ? "Sie haben das Recht auf Auskunft, Löschung und Berichtigung Ihrer Daten."
+              : "Ön jogosult az adataihoz való hozzáférésre, törlésre és módosításra."}
           </DsSection>
 
-          <DsSection number="8" title="Speicherdauer">
-            Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck erforderlich ist
-            oder gesetzlich vorgeschrieben ist.
+          <DsSection number="8" title={t.datenschutz.sections[7]}>
+            {lang === "de"
+              ? "Daten werden nur so lange gespeichert, wie nötig."
+              : "Az adatokat csak a szükséges ideig tároljuk."}
           </DsSection>
 
         </div>
 
-        {/* Footer-Link */}
+        {/* Footer */}
         <div className="mt-10 flex items-center justify-center gap-6 text-xs text-muted-foreground">
           <Link to="/impressum" className="hover:text-primary transition-colors">
             Impressum
@@ -117,7 +123,7 @@ export default function Datenschutz() {
   );
 }
 
-/* ── Hilfskomponente ── */
+/* Komponente */
 
 function DsSection({
   number,

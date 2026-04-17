@@ -3,11 +3,11 @@ import { Sparkles, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Impressum() {
-  const { lang } = useI18n();
+  const { lang, t } = useI18n();
 
   return (
     <>
-      {/* Navbar – gleich wie Hauptseite */}
+      {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto flex items-center justify-between h-16 px-4">
           <Link to="/" className="flex items-center gap-2">
@@ -17,7 +17,7 @@ export default function Impressum() {
                 ZB CLEANINGSERVICE
               </span>
               <span className="block text-[10px] text-muted-foreground tracking-widest uppercase">
-                {lang === "de" ? "Gebäudereinigung" : "Épülettakarítás"}
+                Gebäudereinigung
               </span>
             </div>
           </Link>
@@ -27,12 +27,12 @@ export default function Impressum() {
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
-            {lang === "de" ? "Zurück zur Startseite" : "Vissza a főoldalra"}
+            {t.impressum.back}
           </Link>
         </div>
       </nav>
 
-      {/* Hintergrund-Gradient wie Hero */}
+      {/* Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background to-secondary/30 pointer-events-none" />
       <Sparkles className="fixed top-1/4 left-[5%] h-5 w-5 text-primary/20 animate-pulse pointer-events-none" />
       <Sparkles className="fixed bottom-1/3 right-[8%] h-4 w-4 text-primary/15 animate-pulse delay-700 pointer-events-none" />
@@ -46,22 +46,22 @@ export default function Impressum() {
             ZB Cleaningservice
           </div>
           <h1 className="font-display text-4xl md:text-5xl font-bold">
-            <span className="text-gradient-gold italic">Impressum</span>
+            <span className="text-gradient-gold italic">{t.impressum.title}</span>
           </h1>
         </div>
 
         <div className="border border-border rounded-2xl overflow-hidden bg-secondary/20">
 
-          <Section title="Angaben gemäß § 5 TMG">
-            <Line label="Unternehmen" value="ZB Cleaningservice" />
-            <Line label="Inhaberin" value="Zoltan Rostas" />
-            <Line label="Anschrift" value="5463 Nagyrev, Ujtelep 15" />
-            <Line label="Land" value="Deutschland / Ungarn" />
+          <Section title="§ 5 TMG">
+            <Line label={t.impressum.company} value="ZB Cleaningservice" />
+            <Line label={t.impressum.owner} value="Zoltan Rostas" />
+            <Line label={t.impressum.address} value="5463 Nagyrev, Ujtelep 15" />
+            <Line label={t.impressum.country} value="Deutschland / Ungarn" />
           </Section>
 
           <Divider />
 
-          <Section title="Kontakt">
+          <Section title={t.impressum.contact}>
             <Line label="Telefon" value="+36 20 538 5008" />
             <Line label="Telefon DE" value="+49 176 651 93906" />
             <Line
@@ -73,14 +73,14 @@ export default function Impressum() {
 
           <Divider />
 
-          <Section title="Steuernummer">
-            <Line label="Steuernummer" value="32880014-2-16" />
-            <Line label="VAT ID" value="HU32880014" />
+          <Section title={t.impressum.tax}>
+            <Line label={t.impressum.tax} value="32880014-2-16" />
+            <Line label={t.impressum.vat} value="HU32880014" />
           </Section>
 
           <Divider />
 
-          <Section title="Hosting">
+          <Section title={t.impressum.hosting}>
             <Line label="Anbieter" value="Vercel Inc." />
             <Line label="Adresse" value="440 N Barranca Ave #4133, Covina, CA 91723, USA" />
             <Line label="Website" value="vercel.com" href="https://vercel.com" />
@@ -88,28 +88,26 @@ export default function Impressum() {
 
           <Divider />
 
-          <Section title="Haftung für Inhalte">
+          <Section title={t.impressum.liabilityContent}>
             <p className="text-muted-foreground">
-              Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
-              nach den allgemeinen Gesetzen verantwortlich.
+              Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte verantwortlich.
             </p>
           </Section>
 
           <Divider />
 
-          <Section title="Haftung für Links">
+          <Section title={t.impressum.liabilityLinks}>
             <p className="text-muted-foreground">
-              Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
-              Einfluss haben.
+              Diese Website enthält Links zu externen Websites, auf deren Inhalte wir keinen Einfluss haben.
             </p>
           </Section>
 
         </div>
 
-        {/* Footer-Link */}
+        {/* Footer */}
         <div className="mt-10 flex items-center justify-center gap-6 text-xs text-muted-foreground">
           <Link to="/datenschutz" className="hover:text-primary transition-colors">
-            Datenschutzerklärung
+            Datenschutz
           </Link>
           <span className="text-border">·</span>
           <Link to="/" className="hover:text-primary transition-colors">
@@ -121,7 +119,7 @@ export default function Impressum() {
   );
 }
 
-/* ── Hilfskomponenten ── */
+/* Komponenten */
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
