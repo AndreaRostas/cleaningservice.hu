@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useI18n } from "@/lib/i18n";
 import { Sparkles } from "lucide-react";
 
@@ -16,12 +17,12 @@ export default function Footer() {
         </div>
 
         <div className="flex gap-4">
-          <a href="/impressum" className="hover:text-black transition">
+          <Link to="/impressum" className="hover:text-black transition">
             Impressum
-          </a>
-          <a href="/datenschutz" className="hover:text-black transition">
+          </Link>
+          <Link to="/datenschutz" className="hover:text-black transition">
             Datenschutz
-          </a>
+          </Link>
         </div>
 
         <p className="text-gray-500">
