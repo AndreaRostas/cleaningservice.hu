@@ -22,8 +22,8 @@ const translations = {
 
     about: {
       title: "Über Uns",
-      p1: "Wir sind ein familiengeführtes Unternehmen mit Erfahrung in der Gebäudereinigung.",
-      p2: "Wir bieten Reinigung für Bau, Fenster, Büro und private Haushalte.",
+      p1: "Wir sind ein familiengeführtes Unternehmen mit langjähriger Erfahrung in der professionellen Gebäudereinigung – in Deutschland und darüber hinaus.",
+      p2: "Unser Team bietet maßgeschneiderte Reinigungslösungen für Bauobjekte, Büros, Privathaushalte und Gewerbe. Sauberkeit ist für uns kein Zufallsprodukt – sondern System.",
       feat1Title: "Erfahrenes Team",
       feat1Desc: "Qualifizierte Reinigungskräfte",
       feat2Title: "Höchste Qualität",
@@ -38,31 +38,31 @@ const translations = {
     services: {
       title: "Unsere Leistungen",
       subtitle:
-        "Von Bau bis Unterhalt – wir bieten komplette Reinigungslösungen.",
+        "Von der Baureinigung bis zur laufenden Unterhaltsreinigung – wir bieten komplette, professionelle Reinigungslösungen aus einer Hand.",
       items: [
         {
           title: "Baureinigung",
-          desc: "Reinigung nach Bauarbeiten.",
+          desc: "Professionelle Reinigung nach Bauarbeiten – damit Ihr Objekt sofort bezugsfertig ist. Wir übernehmen die Grob- und Feinreinigung für Neu- und Umbauten, Renovierungen sowie Industrie- und Gewerbeobjekte.",
         },
         {
           title: "Fensterreinigung",
-          desc: "Streifenfreie Glasreinigung.",
+          desc: "Streifenfreie Fenster- und Glasreinigung für Privat und Gewerbe. Ob Bürofassade, Schaufenster oder Wohnhaus – wir sorgen für kristallklare Ergebnisse, innen und außen.",
         },
         {
           title: "Büroreinigung",
-          desc: "Saubere Arbeitsplätze.",
+          desc: "Saubere, hygienische Arbeitsplätze steigern die Produktivität und hinterlassen einen professionellen Eindruck. Wir übernehmen die regelmäßige Reinigung Ihrer Büro- und Geschäftsräume.",
         },
         {
           title: "Haushaltsreinigung",
-          desc: "Für private Haushalte.",
+          desc: "Zuverlässige und diskrete Reinigung für private Haushalte. Von der wöchentlichen Unterhaltsreinigung über die Umzugsreinigung bis zur Endreinigung bei Mieterwechsel.",
         },
         {
           title: "Unterhaltsreinigung",
-          desc: "Regelmäßige Reinigung.",
+          desc: "Regelmäßige Pflege nach individuellem Reinigungsplan – für Unternehmen, Wohnanlagen und öffentliche Einrichtungen. Gleichbleibende Qualität durch feste Reinigungsteams.",
         },
         {
           title: "Grundreinigung",
-          desc: "Tiefenreinigung stark verschmutzter Bereiche.",
+          desc: "Wenn normale Reinigung nicht mehr reicht: Unsere Grundreinigung beseitigt hartnäckigen Schmutz, Kalk, Beläge und Verschmutzungen mit professionellen Maschinen und Spezialreinigungsmitteln.",
         },
       ],
       cta: "Nicht das Richtige gefunden?",
@@ -138,14 +138,14 @@ const translations = {
       title1: "ZB",
       title2: "Cleaningservice",
       subtitle: "Tisztaság rendszerrel",
-      desc: "Megbízható takarító szolgáltatás magas minőségben.",
+      desc: "Megbízható takarító partner – kiváló minőségben, pontosan, rendszeresen.",
       cta: "Ajánlatot kérek",
     },
 
     about: {
       title: "Rólunk",
-      p1: "Családi vállalkozás vagyunk tapasztalattal.",
-      p2: "Épület-, iroda- és ablaktakarítást végzünk.",
+      p1: "Családi vállalkozásként évek óta végzünk professzionális épülettakarítást – Magyarországon és Németországban egyaránt.",
+      p2: "Csapatunk épülettakarításra, irodatakarításra, ablaktisztításra és magánháztartások kiszolgálására specializálódott. A tisztaság nálunk nem véletlenszerű – hanem rendszer.",
       feat1Title: "Tapasztalt csapat",
       feat1Desc: "Szakképzett dolgozók",
       feat2Title: "Magas minőség",
@@ -159,17 +159,36 @@ const translations = {
 
     services: {
       title: "Szolgáltatások",
-      subtitle: "Teljes körű takarítási megoldások.",
+      subtitle:
+        "Az építési takarítástól a rendszeres karbantartásig – teljes körű, professzionális takarítási megoldások egy kézből.",
       items: [
-        { title: "Építési takarítás", desc: "Építkezés utáni takarítás." },
-        { title: "Ablaktisztítás", desc: "Csíkmentes üveg." },
-        { title: "Irodatakarítás", desc: "Tiszta irodák." },
-        { title: "Háztartási takarítás", desc: "Otthoni takarítás." },
-        { title: "Karbantartás", desc: "Rendszeres tisztítás." },
-        { title: "Nagytakarítás", desc: "Mélytisztítás." },
+        {
+          title: "Építési takarítás",
+          desc: "Professzionális takarítás építési munkák után – hogy az ingatlan azonnal beköltözhető legyen. Durva és finom takarítást vállalunk új- és felújított épületekhez, ipari és kereskedelmi ingatlanokhoz.",
+        },
+        {
+          title: "Ablaktisztítás",
+          desc: "Csíkmentes ablak- és üvegtisztítás magán- és üzleti ügyfeleknek. Irodahomlokzat, kirakatüveg vagy lakóépület – kristálytiszta eredményt biztosítunk belülről és kívülről.",
+        },
+        {
+          title: "Irodatakarítás",
+          desc: "A tiszta, higiénikus munkakörnyezet növeli a termelékenységet és professzionális benyomást kelt. Rendszeres irodatakarítást és üzleti helyiségek tisztítását vállaljuk.",
+        },
+        {
+          title: "Háztartási takarítás",
+          desc: "Megbízható és diszkrét takarítás magánháztartásoknak. Heti karbantartástól a költözési takarításon át a bérlőcsere utáni végső takarításig.",
+        },
+        {
+          title: "Karbantartó takarítás",
+          desc: "Rendszeres karbantartás egyéni takarítási terv szerint – vállalatok, lakókomplexumok és közintézmények számára. Állandó minőség állandó csapatokkal.",
+        },
+        {
+          title: "Nagytakarítás",
+          desc: "Amikor a normál takarítás már nem elég: nagytakarításunk eltávolítja a makacs szennyeződéseket, vízkövet és lerakódásokat professzionális gépekkel és speciális tisztítószerekkel.",
+        },
       ],
-      cta: "Nem találta meg?",
-      ctaLink: "Kapcsolat",
+      cta: "Nem találta meg, amit keres?",
+      ctaLink: "Vegye fel velünk a kapcsolatot",
     },
 
     contact: {
