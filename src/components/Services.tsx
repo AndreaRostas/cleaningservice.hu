@@ -6,7 +6,7 @@ import { ArrowRight, X, CheckCircle, Phone } from "lucide-react";
 const serviceData = [
   {
     key: "bau",
-    image: "/public/baureinigung.jpg",
+    image: "/baureinigung.jpg",
     de: {
       title: "Baureinigung",
       short: "Professionelle Reinigung nach Bauarbeiten – von Staub bis Bauschutt.",
@@ -32,7 +32,7 @@ const serviceData = [
   },
   {
     key: "fenster",
-    image: "/public/fensterreinigung.jpg",
+    image: "/fensterreinigung.jpg",
     de: {
       title: "Fensterreinigung",
       short: "Streifenfreie, glänzende Fenster – innen und außen, in jedem Stockwerk.",
@@ -58,7 +58,7 @@ const serviceData = [
   },
   {
     key: "buero",
-    image: "/public/buroreinigung.jpg",
+    image: "/buroreinigung.jpg",
     de: {
       title: "Büroreinigung",
       short: "Saubere, hygienische Arbeitsplätze – täglich, wöchentlich oder nach Bedarf.",
@@ -110,7 +110,7 @@ const serviceData = [
   },
   {
     key: "unterhalts",
-    image: "/public/unterhaltsreinigung.jpg",
+    image: "/unterhaltsreinigung.jpg",
     de: {
       title: "Unterhaltsreinigung",
       short: "Regelmäßige Reinigung für dauerhaft saubere Gebäude und Anlagen.",
@@ -136,7 +136,7 @@ const serviceData = [
   },
   {
     key: "grund",
-    image: "/public/grundreinigung.jpg",
+    image: "/grundreinigung.jpg",
     de: {
       title: "Grundreinigung",
       short: "Tiefenreinigung für stark verschmutzte Bereiche – mit Profimaschinen.",

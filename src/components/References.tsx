@@ -6,7 +6,7 @@ const references = [
   {
     name: "Stadt Linden",
     category: "de",
-    logo: "/public/linden.jpg",   // ← Foto aus public/
+    logo: "/linden.jpg",   // ← Foto aus public/
   },
   {
     name: "Müller Immobilien GmbH",
