@@ -36,7 +36,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.email}</p>
-                  <a href="mailto:zb.service247@gmail.com" className="text-foreground font-medium hover:text-primary transition-colors">
+                  <a href="mailto:info@zbcleaningservice.com" className="text-foreground font-medium hover:text-primary transition-colors">
                     info@zbcleaningservice.com
                   </a>
                 </div>
@@ -47,10 +47,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.location}</p>
-                  <p className="text-foreground font-medium">{t.contact.locationValue}</p>
+                  <p className="text-foreground font-medium">5463 Nagyrev, Ungarn</p>
+                  <p className="text-foreground font-medium">Allendorf (Lumda), Deutschland</p>
                 </div>
               </div>
-            </div>
+            </div> {/* ← das fehlte! */}
 
             <h4 className="font-display font-bold mb-3">{t.contact.whyUs}</h4>
             <ul className="space-y-2">

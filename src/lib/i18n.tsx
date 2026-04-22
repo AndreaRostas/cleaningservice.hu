@@ -76,7 +76,7 @@ const translations = {
       phone: "Telefon",
       email: "E-Mail",
       location: "Standort",
-      locationValue: "5463 Nagyrev, Ungarn",
+      locationValue:"5463 Nagyrev, Ungarn · Allendorf (Lumda), Deutschland"  ,
       formTitle: "Nachricht senden",
       name: "Name",
       phoneLabel: "Telefon",
