@@ -84,7 +84,7 @@ const serviceData = [
   },
   {
     key: "haushalt",
-    image: "https://images.unsplash.com/photo-1527515545081-5db817172677?auto=format&fit=crop&w=800&q=80",
+    image: "/haushaltsreinigung.png",
     de: {
       title: "Haushaltsreinigung",
       short: "Ihr Zuhause in besten Händen – gründlich, zuverlässig und diskret.",
