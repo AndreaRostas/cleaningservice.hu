@@ -37,7 +37,7 @@ export default function Contact() {
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.email}</p>
                   <a href="mailto:zb.service247@gmail.com" className="text-foreground font-medium hover:text-primary transition-colors">
-                    zb.service247@gmail.com
+                    info@zbcleaningservice.com
                   </a>
                 </div>
               </div>

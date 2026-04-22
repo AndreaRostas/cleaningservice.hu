@@ -4,6 +4,11 @@ import { Building2, Star } from "lucide-react";
 // Reference clients - replace logo URLs with real ones when available
 const references = [
   {
+    name: "Stadt Linden",
+    category: "de",
+    logo: "/public/linden.jpg",   // ← Foto aus public/
+  },
+  {
     name: "Müller Immobilien GmbH",
     category: "de",
     initials: "MI",
@@ -105,11 +110,17 @@ export default function References() {
               key={ref.name}
               className={`flex flex-col items-center justify-center gap-3 border rounded-xl p-5 bg-white shadow-sm hover:shadow-md hover:border-primary/40 transition-all group cursor-default ${ref.color}`}
             >
-              <div
-                className={`w-12 h-12 rounded-full flex items-center justify-center font-display font-bold text-sm border ${ref.color} group-hover:scale-110 transition-transform`}
-              >
-                {ref.initials}
-              </div>
+              {(ref as any).logo ? (
+  <div className="w-16 h-12 flex items-center justify-center">
+    <img src={(ref as any).logo} alt={ref.name} className="max-h-10 max-w-[70px] object-contain" />
+  </div>
+) : (
+  <div
+    className={`w-12 h-12 rounded-full flex items-center justify-center font-display font-bold text-sm border ${ref.color} group-hover:scale-110 transition-transform`}
+  >
+    {ref.initials}
+  </div>
+)}
               <span className="text-xs font-medium text-center leading-tight text-current opacity-80">
                 {ref.name}
               </span>

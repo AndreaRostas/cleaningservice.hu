@@ -6,7 +6,7 @@ import { ArrowRight, X, CheckCircle, Phone } from "lucide-react";
 const serviceData = [
   {
     key: "bau",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+    image: "/public/baureinigung.jpg",
     de: {
       title: "Baureinigung",
       short: "Professionelle Reinigung nach Bauarbeiten – von Staub bis Bauschutt.",
@@ -32,7 +32,7 @@ const serviceData = [
   },
   {
     key: "fenster",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+    image: "/public/fensterreinigung.jpg",
     de: {
       title: "Fensterreinigung",
       short: "Streifenfreie, glänzende Fenster – innen und außen, in jedem Stockwerk.",
@@ -58,7 +58,7 @@ const serviceData = [
   },
   {
     key: "buero",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+    image: "/public/buroreinigung.jpg",
     de: {
       title: "Büroreinigung",
       short: "Saubere, hygienische Arbeitsplätze – täglich, wöchentlich oder nach Bedarf.",
@@ -110,7 +110,7 @@ const serviceData = [
   },
   {
     key: "unterhalts",
-    image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=800&q=80",
+    image: "/public/unterhaltsreinigung.jpg",
     de: {
       title: "Unterhaltsreinigung",
       short: "Regelmäßige Reinigung für dauerhaft saubere Gebäude und Anlagen.",
@@ -136,7 +136,7 @@ const serviceData = [
   },
   {
     key: "grund",
-    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=800&q=80",
+    image: "/public/grundreinigung.jpg",
     de: {
       title: "Grundreinigung",
       short: "Tiefenreinigung für stark verschmutzte Bereiche – mit Profimaschinen.",
