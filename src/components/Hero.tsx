@@ -11,7 +11,7 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "url('/public/fensterreinigung.jpg')",
+            "url('/fensterreinigung.jpg')",
         }}
       />
       {/* Dark teal overlay for text readability */}
