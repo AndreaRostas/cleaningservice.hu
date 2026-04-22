@@ -3,25 +3,20 @@ import { Sparkles, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Datenschutz() {
-  const {lang, t } = useI18n();
+  const { lang, t } = useI18n();
 
   return (
     <>
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container mx-auto flex items-center justify-between h-16 px-4">
           <Link to="/" className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-primary" />
             <div>
-              <span className="font-display font-bold text-primary text-sm tracking-wide">
-                ZB CLEANINGSERVICE
-              </span>
-              <span className="block text-[10px] text-muted-foreground tracking-widest uppercase">
-                Gebäudereinigung
-              </span>
+              <span className="font-display font-bold text-primary text-sm tracking-wide">ZB CLEANINGSERVICE</span>
+              <span className="block text-[10px] text-muted-foreground tracking-widest uppercase">Gebäudereinigung</span>
             </div>
           </Link>
-
           <Link
             to="/"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -33,12 +28,11 @@ export default function Datenschutz() {
       </nav>
 
       {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background to-secondary/30 pointer-events-none" />
+      <div className="min-h-screen bg-white" />
       <Sparkles className="fixed top-1/4 right-[5%] h-5 w-5 text-primary/20 animate-pulse pointer-events-none" />
       <Sparkles className="fixed bottom-1/4 left-[8%] h-4 w-4 text-primary/15 animate-pulse delay-700 pointer-events-none" />
 
       <main className="max-w-3xl mx-auto px-4 pt-28 pb-20 text-sm leading-relaxed">
-
         {/* Header */}
         <div className="mb-10">
           <div className="inline-flex items-center gap-2 bg-secondary border border-border rounded-full px-4 py-1.5 mb-6 text-xs text-muted-foreground">
@@ -46,12 +40,11 @@ export default function Datenschutz() {
             ZB Cleaningservice
           </div>
           <h1 className="font-display text-4xl md:text-5xl font-bold">
-            <span className="text-gradient-gold italic">{t.datenschutz.title}</span>
+            <span className="text-gradient-teal italic">{t.datenschutz.title}</span>
           </h1>
         </div>
 
         <div className="space-y-3">
-
           <DsSection number="1" title={t.datenschutz.sections[0]}>
             {lang === "de"
               ? "Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Website verarbeitet Daten ausschließlich im Rahmen der gesetzlichen Datenschutzvorschriften (DSGVO, TMG)."
@@ -61,9 +54,7 @@ export default function Datenschutz() {
           <DsSection number="2" title={t.datenschutz.sections[1]}>
             <div className="space-y-0.5">
               <p className="text-foreground font-medium">ZB Cleaningservice</p>
-              <p>
-                {lang === "de" ? "Inhaberin" : "Tulajdonos"}: Zoltan Rostas
-              </p>
+              <p>{lang === "de" ? "Inhaber" : "Tulajdonos"}: Zoltan Rostas</p>
               <a href="mailto:zb.service247@gmail.com" className="text-primary hover:underline">
                 zb.service247@gmail.com
               </a>
@@ -105,25 +96,18 @@ export default function Datenschutz() {
               ? "Daten werden nur so lange gespeichert, wie nötig."
               : "Az adatokat csak a szükséges ideig tároljuk."}
           </DsSection>
-
         </div>
 
-        {/* Footer */}
+        {/* Footer links */}
         <div className="mt-10 flex items-center justify-center gap-6 text-xs text-muted-foreground">
-          <Link to="/impressum" className="hover:text-primary transition-colors">
-            Impressum
-          </Link>
+          <Link to="/impressum" className="hover:text-primary transition-colors">Impressum</Link>
           <span className="text-border">·</span>
-          <Link to="/" className="hover:text-primary transition-colors">
-            Startseite
-          </Link>
+          <Link to="/" className="hover:text-primary transition-colors">Startseite</Link>
         </div>
       </main>
     </>
   );
 }
-
-/* Komponente */
 
 function DsSection({
   number,
@@ -135,7 +119,7 @@ function DsSection({
   children: React.ReactNode;
 }) {
   return (
-    <div className="border border-border rounded-2xl bg-secondary/20 px-6 py-5">
+    <div className="border border-border rounded-2xl bg-white px-6 py-5 shadow-sm hover:shadow-md hover:border-primary/30 transition-all">
       <div className="flex items-start gap-3">
         <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-xs font-bold text-primary">
           {number}

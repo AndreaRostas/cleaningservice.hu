@@ -7,14 +7,15 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
 
   return (
-    <section id="contact" className="py-24 px-4">
+    <section id="contact" className="py-24 px-4 bg-white">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-4 text-gradient-gold">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-4 text-gradient-teal">
           {t.contact.title}
         </h2>
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">{t.contact.subtitle}</p>
 
         <div className="grid md:grid-cols-2 gap-12">
+          {/* Left: contact info */}
           <div>
             <h3 className="font-display font-bold text-xl mb-6">{t.contact.reachUs}</h3>
             <div className="space-y-5 mb-8">
@@ -24,7 +25,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.phone}</p>
-                  <a href="tel:017665193906" className="text-foreground font-medium hover:text-primary transition-colors">+49 176 6519 3906 <br /> +36 20 538 5008 </a>
+                  <a href="tel:017665193906" className="text-foreground font-medium hover:text-primary transition-colors">
+                    +49 176 6519 3906<br />+36 20 538 5008
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -33,7 +36,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.email}</p>
-                  <a href="mailto:Glanz.vierundzwanzig@gmx.de" className="text-foreground font-medium hover:text-primary transition-colors">info@zbcleaningservice.com</a>
+                  <a href="mailto:zb.service247@gmail.com" className="text-foreground font-medium hover:text-primary transition-colors">
+                    zb.service247@gmail.com
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -58,7 +63,8 @@ export default function Contact() {
             </ul>
           </div>
 
-          <div>
+          {/* Right: form */}
+          <div className="bg-secondary/30 border border-border rounded-2xl p-6">
             <h3 className="font-display font-bold text-xl mb-6">{t.contact.formTitle}</h3>
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
               <div>
@@ -68,7 +74,7 @@ export default function Contact() {
                   required
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="w-full bg-white border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
                 />
               </div>
               <div>
@@ -78,7 +84,7 @@ export default function Contact() {
                   required
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="w-full bg-white border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
                 />
               </div>
               <div>
@@ -88,7 +94,7 @@ export default function Contact() {
                   required
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="w-full bg-white border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
                 />
               </div>
               <div>
@@ -97,12 +103,12 @@ export default function Contact() {
                   rows={4}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
+                  className="w-full bg-white border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none transition"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3.5 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+                className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3.5 rounded-lg font-semibold hover:opacity-90 transition-opacity glow-teal"
               >
                 <Send className="h-4 w-4" />
                 {t.contact.send}

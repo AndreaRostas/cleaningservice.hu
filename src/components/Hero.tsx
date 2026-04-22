@@ -5,8 +5,13 @@ export default function Hero() {
   const { t } = useI18n();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/30" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+      {/* Subtle teal background blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-primary/8 rounded-full blur-3xl" />
+        <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-primary/6 rounded-full blur-3xl" />
+      </div>
+
       <Sparkles className="absolute top-1/4 left-[15%] h-5 w-5 text-primary/30 animate-pulse" />
       <Sparkles className="absolute top-1/3 right-[10%] h-4 w-4 text-primary/20 animate-pulse delay-500" />
       <Sparkles className="absolute bottom-1/3 left-[25%] h-3 w-3 text-primary/25 animate-pulse delay-1000" />
@@ -18,7 +23,7 @@ export default function Hero() {
         </div>
 
         <h1 className="font-display text-5xl md:text-7xl font-bold mb-4">
-          <span className="text-gradient-gold italic">{t.hero.title1}</span>{" "}
+          <span className="text-gradient-teal italic">{t.hero.title1}</span>{" "}
           <span className="text-foreground">{t.hero.title2}</span>
         </h1>
 
@@ -28,7 +33,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-semibold hover:opacity-90 transition-opacity glow-gold"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-semibold hover:opacity-90 transition-opacity glow-teal"
           >
             {t.hero.cta}
             <ArrowRight className="h-4 w-4" />
@@ -37,8 +42,7 @@ export default function Hero() {
             href="tel:017665193906"
             className="inline-flex items-center gap-2 border border-primary/40 text-primary px-8 py-3.5 rounded-full font-semibold hover:bg-primary/10 transition-colors"
           >
-            +36 20 538 5008 <br />
-            +49 176 651 93906
+            +36 20 538 5008 / +49 176 651 93906
           </a>
         </div>
       </div>

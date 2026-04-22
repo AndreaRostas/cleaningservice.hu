@@ -5,7 +5,7 @@ export default function Navbar() {
   const { lang, setLang, t } = useI18n();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <div className="flex items-center gap-2">
           <Sparkles className="h-5 w-5 text-primary" />
@@ -20,6 +20,9 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8 text-sm">
           <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">{t.nav.about}</a>
           <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">{t.nav.services}</a>
+          <a href="#references" className="text-muted-foreground hover:text-primary transition-colors">
+            {lang === "de" ? "Referenzen" : "Referenciák"}
+          </a>
           <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">{t.nav.contact}</a>
         </div>
 

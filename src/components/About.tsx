@@ -13,9 +13,9 @@ export default function About() {
   const extras = [t.about.extra1, t.about.extra2, t.about.extra3];
 
   return (
-    <section id="about" className="py-24 px-4">
+    <section id="about" className="py-24 px-4 bg-secondary/20">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-6 text-gradient-gold">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-6 text-gradient-teal">
           {t.about.title}
         </h2>
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-4 leading-relaxed">{t.about.p1}</p>
@@ -23,7 +23,7 @@ export default function About() {
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {features.map((f) => (
-            <div key={f.title} className="bg-card border border-border rounded-xl p-6 text-center hover:border-primary/30 transition-colors">
+            <div key={f.title} className="bg-white border border-border rounded-xl p-6 text-center hover:border-primary/30 hover:shadow-md transition-all">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
                 <f.icon className="h-5 w-5 text-primary" />
               </div>
