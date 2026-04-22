@@ -22,8 +22,8 @@ const translations = {
 
     about: {
       title: "Über Uns",
-      p1: "Wir sind ein familiengeführtes Unternehmen mit langjähriger Erfahrung in der professionellen Gebäudereinigung – in Deutschland und darüber hinaus.",
-      p2: "Unser Team bietet maßgeschneiderte Reinigungslösungen für Bauobjekte, Büros, Privathaushalte und Gewerbe. Sauberkeit ist für uns kein Zufallsprodukt – sondern System.",
+      p1: "Wir sind ein familiengeführtes Unternehmen mit Erfahrung in der Gebäudereinigung.",
+      p2: "Wir bieten Reinigung für Bau, Fenster, Büro und private Haushalte.",
       feat1Title: "Erfahrenes Team",
       feat1Desc: "Qualifizierte Reinigungskräfte",
       feat2Title: "Höchste Qualität",
@@ -38,31 +38,31 @@ const translations = {
     services: {
       title: "Unsere Leistungen",
       subtitle:
-        "Von der Baureinigung bis zur laufenden Unterhaltsreinigung – wir bieten komplette, professionelle Reinigungslösungen aus einer Hand.",
+        "Von Bau bis Unterhalt – wir bieten komplette Reinigungslösungen.",
       items: [
         {
           title: "Baureinigung",
-          desc: "Professionelle Reinigung nach Bauarbeiten – damit Ihr Objekt sofort bezugsfertig ist. Wir übernehmen die Grob- und Feinreinigung für Neu- und Umbauten, Renovierungen sowie Industrie- und Gewerbeobjekte.",
+          desc: "Reinigung nach Bauarbeiten.",
         },
         {
           title: "Fensterreinigung",
-          desc: "Streifenfreie Fenster- und Glasreinigung für Privat und Gewerbe. Ob Bürofassade, Schaufenster oder Wohnhaus – wir sorgen für kristallklare Ergebnisse, innen und außen.",
+          desc: "Streifenfreie Glasreinigung.",
         },
         {
           title: "Büroreinigung",
-          desc: "Saubere, hygienische Arbeitsplätze steigern die Produktivität und hinterlassen einen professionellen Eindruck. Wir übernehmen die regelmäßige Reinigung Ihrer Büro- und Geschäftsräume.",
+          desc: "Saubere Arbeitsplätze.",
         },
         {
           title: "Haushaltsreinigung",
-          desc: "Zuverlässige und diskrete Reinigung für private Haushalte. Von der wöchentlichen Unterhaltsreinigung über die Umzugsreinigung bis zur Endreinigung bei Mieterwechsel.",
+          desc: "Für private Haushalte.",
         },
         {
           title: "Unterhaltsreinigung",
-          desc: "Regelmäßige Pflege nach individuellem Reinigungsplan – für Unternehmen, Wohnanlagen und öffentliche Einrichtungen. Gleichbleibende Qualität durch feste Reinigungsteams.",
+          desc: "Regelmäßige Reinigung.",
         },
         {
           title: "Grundreinigung",
-          desc: "Wenn normale Reinigung nicht mehr reicht: Unsere Grundreinigung beseitigt hartnäckigen Schmutz, Kalk, Beläge und Verschmutzungen mit professionellen Maschinen und Spezialreinigungsmitteln.",
+          desc: "Tiefenreinigung stark verschmutzter Bereiche.",
         },
       ],
       cta: "Nicht das Richtige gefunden?",
@@ -76,7 +76,7 @@ const translations = {
       phone: "Telefon",
       email: "E-Mail",
       location: "Standort",
-      locationValue: "Deutschland",
+      locationValue: "5463 Nagyrev, Ungarn",
       formTitle: "Nachricht senden",
       name: "Name",
       phoneLabel: "Telefon",
@@ -92,6 +92,14 @@ const translations = {
 
     footer: {
       rights: "Alle Rechte vorbehalten.",
+      contactPerson: "Ansprechpartner",
+      role: "Geschäftsführer · ZB Cleaning Service Kft.",
+      companyInfo: "Firmenangaben",
+      seat: "Sitz: Nagyrév, Magyarország",
+      register: "Handelsregisternr.: 16-09-023190",
+      tax: "Steuernummer: 32880014-2-16",
+      tagline: "Professionelle Gebäudereinigung – zuverlässig, gründlich und termingerecht.",
+      privacy: "Datenschutz / Adatvédelem",
     },
 
     impressum: {
@@ -138,14 +146,14 @@ const translations = {
       title1: "ZB",
       title2: "Cleaningservice",
       subtitle: "Tisztaság rendszerrel",
-      desc: "Megbízható takarító partner – kiváló minőségben, pontosan, rendszeresen.",
+      desc: "Megbízható takarító szolgáltatás magas minőségben.",
       cta: "Ajánlatot kérek",
     },
 
     about: {
       title: "Rólunk",
-      p1: "Családi vállalkozásként évek óta végzünk professzionális épülettakarítást – Magyarországon és Németországban egyaránt.",
-      p2: "Csapatunk épülettakarításra, irodatakarításra, ablaktisztításra és magánháztartások kiszolgálására specializálódott. A tisztaság nálunk nem véletlenszerű – hanem rendszer.",
+      p1: "Családi vállalkozás vagyunk tapasztalattal.",
+      p2: "Épület-, iroda- és ablaktakarítást végzünk.",
       feat1Title: "Tapasztalt csapat",
       feat1Desc: "Szakképzett dolgozók",
       feat2Title: "Magas minőség",
@@ -159,36 +167,17 @@ const translations = {
 
     services: {
       title: "Szolgáltatások",
-      subtitle:
-        "Az építési takarítástól a rendszeres karbantartásig – teljes körű, professzionális takarítási megoldások egy kézből.",
+      subtitle: "Teljes körű takarítási megoldások.",
       items: [
-        {
-          title: "Építési takarítás",
-          desc: "Professzionális takarítás építési munkák után – hogy az ingatlan azonnal beköltözhető legyen. Durva és finom takarítást vállalunk új- és felújított épületekhez, ipari és kereskedelmi ingatlanokhoz.",
-        },
-        {
-          title: "Ablaktisztítás",
-          desc: "Csíkmentes ablak- és üvegtisztítás magán- és üzleti ügyfeleknek. Irodahomlokzat, kirakatüveg vagy lakóépület – kristálytiszta eredményt biztosítunk belülről és kívülről.",
-        },
-        {
-          title: "Irodatakarítás",
-          desc: "A tiszta, higiénikus munkakörnyezet növeli a termelékenységet és professzionális benyomást kelt. Rendszeres irodatakarítást és üzleti helyiségek tisztítását vállaljuk.",
-        },
-        {
-          title: "Háztartási takarítás",
-          desc: "Megbízható és diszkrét takarítás magánháztartásoknak. Heti karbantartástól a költözési takarításon át a bérlőcsere utáni végső takarításig.",
-        },
-        {
-          title: "Karbantartó takarítás",
-          desc: "Rendszeres karbantartás egyéni takarítási terv szerint – vállalatok, lakókomplexumok és közintézmények számára. Állandó minőség állandó csapatokkal.",
-        },
-        {
-          title: "Nagytakarítás",
-          desc: "Amikor a normál takarítás már nem elég: nagytakarításunk eltávolítja a makacs szennyeződéseket, vízkövet és lerakódásokat professzionális gépekkel és speciális tisztítószerekkel.",
-        },
+        { title: "Építési takarítás", desc: "Építkezés utáni takarítás." },
+        { title: "Ablaktisztítás", desc: "Csíkmentes üveg." },
+        { title: "Irodatakarítás", desc: "Tiszta irodák." },
+        { title: "Háztartási takarítás", desc: "Otthoni takarítás." },
+        { title: "Karbantartás", desc: "Rendszeres tisztítás." },
+        { title: "Nagytakarítás", desc: "Mélytisztítás." },
       ],
-      cta: "Nem találta meg, amit keres?",
-      ctaLink: "Vegye fel velünk a kapcsolatot",
+      cta: "Nem találta meg?",
+      ctaLink: "Kapcsolat",
     },
 
     contact: {
@@ -214,6 +203,14 @@ const translations = {
 
     footer: {
       rights: "Minden jog fenntartva.",
+      contactPerson: "Kapcsolattartó",
+      role: "Ügyvezető · ZB Cleaning Service Kft.",
+      companyInfo: "Céginformáció",
+      seat: "Székhely: Nagyrév, Magyarország",
+      register: "Cégjegyzékszám: 16-09-023190",
+      tax: "Adószám: 32880014-2-16",
+      tagline: "Professzionális épülettakarítás – megbízható, alapos és határidőre.",
+      privacy: "Adatvédelem / Datenschutz",
     },
 
     impressum: {
