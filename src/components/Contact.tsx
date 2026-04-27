@@ -1,5 +1,5 @@
 import { useI18n } from "@/lib/i18n";
-import { Phone, Mail, MapPin, CheckCircle, Send, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, CheckCircle, Send, MessageCircle, Clock } from "lucide-react";
 import { useState } from "react";
 
 const WhatsAppIcon = () => (
@@ -8,9 +8,42 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
+type Status = "idle" | "sending" | "success" | "error";
+
 export default function Contact() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+  const [status, setStatus] = useState<Status>("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      const res = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          message: form.message,
+          _subject: `Neue Anfrage von ${form.name} – ZB Cleaningservice`,
+        }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setForm({ name: "", phone: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  const responseTimeText = lang === "de"
+    ? "⚡ Wir antworten innerhalb von 2 Stunden"
+    : "⚡ 2 órán belül válaszolunk";
 
   return (
     <section id="contact" className="py-24 px-4 bg-white">
@@ -18,7 +51,15 @@ export default function Contact() {
         <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-4 text-gradient-teal">
           {t.contact.title}
         </h2>
-        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">{t.contact.subtitle}</p>
+        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-4">{t.contact.subtitle}</p>
+
+        {/* Response time badge */}
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-2 text-sm font-medium">
+            <Clock className="h-4 w-4" />
+            {responseTimeText}
+          </div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Left: contact info */}
@@ -85,11 +126,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.location}</p>
-                  <p className="text-foreground font-medium">5463 Nagyrev, Ungarn</p>
-                  <p className="text-foreground font-medium">Allendorf (Lumda), Deutschland</p>
+                  <p className="text-foreground font-medium">Wetzlar · Gießen · Marburg</p>
+                  <p className="text-foreground font-medium">Lahn-Dill-Kreis · Ungarn landesweit</p>
                 </div>
               </div>
-            </div> {/* ← das fehlte! */}
+            </div>
 
             <h4 className="font-display font-bold mb-3">{t.contact.whyUs}</h4>
             <ul className="space-y-2">
@@ -105,54 +146,92 @@ export default function Contact() {
           {/* Right: form */}
           <div className="bg-secondary/30 border border-border rounded-2xl p-6">
             <h3 className="font-display font-bold text-xl mb-6">{t.contact.formTitle}</h3>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <label className="text-sm text-muted-foreground block mb-1.5">{t.contact.name} *</label>
-                <input
-                  type="text"
-                  required
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full bg-white border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
-                />
+
+            {status === "success" ? (
+              <div className="flex flex-col items-center justify-center h-64 text-center gap-4">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                  <CheckCircle className="h-8 w-8 text-primary" />
+                </div>
+                <p className="font-display font-bold text-lg">
+                  {lang === "de" ? "Nachricht gesendet!" : "Üzenet elküldve!"}
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  {lang === "de"
+                    ? "Wir melden uns innerhalb von 2 Stunden bei Ihnen."
+                    : "2 órán belül felvesszük Önnel a kapcsolatot."}
+                </p>
+                <button
+                  onClick={() => setStatus("idle")}
+                  className="text-primary text-sm underline underline-offset-2 hover:opacity-80"
+                >
+                  {lang === "de" ? "Neue Anfrage senden" : "Új üzenet küldése"}
+                </button>
               </div>
-              <div>
-                <label className="text-sm text-muted-foreground block mb-1.5">{t.contact.phoneLabel} *</label>
-                <input
-                  type="tel"
-                  required
-                  value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full bg-white border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
-                />
-              </div>
-              <div>
-                <label className="text-sm text-muted-foreground block mb-1.5">{t.contact.emailLabel} *</label>
-                <input
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full bg-white border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
-                />
-              </div>
-              <div>
-                <label className="text-sm text-muted-foreground block mb-1.5">{t.contact.message}</label>
-                <textarea
-                  rows={4}
-                  value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full bg-white border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none transition"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3.5 rounded-lg font-semibold hover:opacity-90 transition-opacity glow-teal"
-              >
-                <Send className="h-4 w-4" />
-                {t.contact.send}
-              </button>
-            </form>
+            ) : (
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <div>
+                  <label className="text-sm text-muted-foreground block mb-1.5">{t.contact.name} *</label>
+                  <input
+                    type="text"
+                    required
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    className="w-full bg-white border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm text-muted-foreground block mb-1.5">{t.contact.phoneLabel} *</label>
+                  <input
+                    type="tel"
+                    required
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    className="w-full bg-white border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm text-muted-foreground block mb-1.5">{t.contact.emailLabel} *</label>
+                  <input
+                    type="email"
+                    required
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    className="w-full bg-white border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm text-muted-foreground block mb-1.5">{t.contact.message}</label>
+                  <textarea
+                    rows={4}
+                    value={form.message}
+                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    className="w-full bg-white border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none transition"
+                  />
+                </div>
+                {status === "error" && (
+                  <p className="text-red-500 text-sm">
+                    {lang === "de"
+                      ? "Fehler beim Senden. Bitte rufen Sie uns direkt an."
+                      : "Hiba a küldéskor. Kérjük, hívjon minket közvetlenül."}
+                  </p>
+                )}
+                <button
+                  type="submit"
+                  disabled={status === "sending"}
+                  className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3.5 rounded-lg font-semibold hover:opacity-90 transition-opacity glow-teal disabled:opacity-60"
+                >
+                  <Send className="h-4 w-4" />
+                  {status === "sending"
+                    ? (lang === "de" ? "Wird gesendet…" : "Küldés…")
+                    : t.contact.send}
+                </button>
+                <p className="text-xs text-muted-foreground text-center">
+                  {lang === "de"
+                    ? "Kostenloses Angebot · Keine Verpflichtung · Antwort in 2h"
+                    : "Ingyenes ajánlat · Kötelezettség nélkül · 2 órán belül"}
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </div>
