@@ -64,6 +64,10 @@ const translations = {
           title: "Grundreinigung",
           desc: "Tiefenreinigung stark verschmutzter Bereiche.",
         },
+        {
+          title: "Grünpflege & Rasenmähen",
+          desc: "Rasenmähen, Heckenpflege, Fűkaszálás und Grünanlagenpflege.",
+        },
       ],
       cta: "Nicht das Richtige gefunden?",
       ctaLink: "Kontakt aufnehmen",
@@ -88,6 +92,8 @@ const translations = {
       why2: "Schnelle Antwort",
       why3: "Faire Preise",
       why4: "Zufriedenheit garantiert",
+      whatsapp: "WhatsApp schreiben",
+      messenger: "Messenger schreiben",
     },
 
     footer: {
@@ -175,6 +181,7 @@ const translations = {
         { title: "Háztartási takarítás", desc: "Otthoni takarítás." },
         { title: "Karbantartás", desc: "Rendszeres tisztítás." },
         { title: "Nagytakarítás", desc: "Mélytisztítás." },
+        { title: "Zöldterület-gondozás & Fűnyírás", desc: "Fűnyírás, fűkaszálás, sövényvágás és zöldterület-kezelés." },
       ],
       cta: "Nem találta meg?",
       ctaLink: "Kapcsolat",
@@ -199,6 +206,8 @@ const translations = {
       why2: "Gyors válasz",
       why3: "Fair árak",
       why4: "Garancia",
+      whatsapp: "WhatsApp üzenet",
+      messenger: "Messenger üzenet",
     },
 
     footer: {

@@ -160,6 +160,34 @@ const serviceData = [
       ],
     },
   },
+  {
+    key: "gruenpflege",
+    image: "/heck.jpg",
+    de: {
+      title: "Grünpflege & Rasenmähen",
+      short: "Rasenmähen, Heckenpflege, Fűkaszálás – Ihr Außenbereich immer gepflegt.",
+      details: [
+        "Regelmäßiges Rasenmähen (Fűnyírás) für alle Flächengrößen",
+        "Fűkaszálás – Mahd auf verwilderten und großen Freiflächen",
+        "Heckenschnitt und Formschnitt von Sträuchern",
+        "Laubreinigung und saisonale Grünpflege",
+        "Unkrautentfernung auf Beeten und Pflasterflächen",
+        "Kombi-Paket: Reinigung + Grünpflege aus einer Hand",
+      ],
+    },
+    hu: {
+      title: "Zöldterület-gondozás & Fűnyírás",
+      short: "Fűnyírás, fűkaszálás, sövényvágás – külterei mindig rendezett.",
+      details: [
+        "Rendszeres fűnyírás minden méretű területhez",
+        "Fűkaszálás – kaszálás elvadult és nagy szabad területeken",
+        "Sövényvágás és bokrok formázása",
+        "Lombszedés és szezonális zöldterület-gondozás",
+        "Gyomirtás virágágyásokban és burkolaton",
+        "Kombinált csomag: takarítás + zöldterület-gondozás egy kézből",
+      ],
+    },
+  },
 ];
 
 export default function Services() {
