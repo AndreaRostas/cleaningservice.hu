@@ -74,7 +74,7 @@ export default function Hero() {
             WhatsApp
           </a>
           <a
-            href="https://m.me/zbcleaningservice"
+            href="https://m.me/61589079891069"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#0084ff] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-[#006edb] transition-colors shadow-lg"
